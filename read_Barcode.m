@@ -7,7 +7,7 @@ function numbers = read_Barcode(motor,sensor,speed,interval)
 	stop(motor,1);
 	pause(1.5);
 	resetRotation(motor);
-	start(motor)
+	start(motor);
 
 	b_read = false;
 	points=[];
@@ -20,7 +20,7 @@ function numbers = read_Barcode(motor,sensor,speed,interval)
 			b_read=false;
 		end
 	end
-	
+	stop(motor,1);
 	points = round(points./interval)+1;
 	
 	points = [1 points];
