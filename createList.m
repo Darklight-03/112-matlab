@@ -11,7 +11,7 @@ function list = createList(binary)
 	elseif (isequal(pt1,[0 1 1]))
 			mat = 'blue glass';
 	end
-	pt2d=bi2de(pt2);
+	pt2d=binaryVectorToDecimal(pt2);
 	type1=mod((pt2d-1),4);
 	type2=floor((pt2d-1)/4);
 	if(~strcmp(mat,'steel/hdpe'))
