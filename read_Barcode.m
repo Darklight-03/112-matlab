@@ -2,6 +2,12 @@ function numbers = read_Barcode(motor,sensor,speed,interval)
 	
 	readColor(sensor)
 	motor.Speed=speed;
+
+	while(~strcmp(readColor(sensor),'black'))
+		start(motor)
+	end
+	pause(.1);
+
 	while(strcmp(readColor(sensor),'black'))
 		start(motor)
 	end
