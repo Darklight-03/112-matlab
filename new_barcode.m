@@ -7,9 +7,9 @@ cupSpinnerPort='C';
 dumperPort='D';
 rotationDistance = 360;
 rotationSpeed = -42;
-interval = 30;
+interval = 270;
 barcodeSpeed=20;
-numBarcodes=3;
+numBarcodes=1;
 
 brick = legoev3('usb');
 barcodeMotor = motor(brick, barcodeMotorPort);
