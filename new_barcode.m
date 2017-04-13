@@ -7,7 +7,7 @@ cupSpinnerPort='C';
 dumperPort='D';
 rotationDistance = 360;
 rotationSpeed = -42;
-interval = 270;
+interval = 285;
 barcodeSpeed=20;
 numBarcodes=1;
 

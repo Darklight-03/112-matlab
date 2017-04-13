@@ -5,10 +5,14 @@ function numbers = read_Barcode(motor,sensor,speed,interval)
 		start(motor)
 	end
 	
+	while(~strcmp(readColor(sensor),'black'))
+		start(motor)
+	end
+
 	while(strcmp(readColor(sensor),'black'))
 		start(motor)
 	end
-	
+
 	stop(motor,1);
 	pause(1.5);
 	resetRotation(motor);
