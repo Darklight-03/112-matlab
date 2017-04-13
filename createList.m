@@ -14,6 +14,14 @@ function list = createList(binary)
 	pt2d=bi2de(pt2);
 	type1=mod((pt2d-1),4);
 	type2=floor((pt2d-1)/4);
+	if(~strcmp(mat,'steel/hdpe'))
+		mat1 = 'large '+mat;
+		mat2 = 'small '+mat;
+	else
+		mat1 = 'steel';
+		mat2 = 'hdpe';
+	end
 
-	map = containers.Map;
+	map = containers.Map([mat1 mat2],[type1 type2]);
+	list = map;	
 end
