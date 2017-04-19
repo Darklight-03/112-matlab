@@ -42,7 +42,7 @@ for i = 1:numBarcodes
 		end
 	end
 end
-total = sum(values(map));
+total = sum(cell2mat(map.values));
 
 
 while(total>0)
