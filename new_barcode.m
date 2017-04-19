@@ -35,10 +35,10 @@ for i = 1:numBarcodes
 	keys = tmap.keys;
 	values= tmap.values;
 	for n=1:length(keys)
-		if(isKey(map,keys(n)))
-			map(keys(n))=map(keys(n))+tmap(keys(n));
+		if(isKey(map,cell2mat(keys(n))))
+			map(cell2mat(keys(n)))=map(cell2mat(keys(n)))+tmap(cell2mat(keys(n)));
 		else
-			map(keys(n))=tmap(keys(n));
+			map(cell2mat(keys(n)))=tmap(cell2mat(keys(n)));
 		end
 	end
 end
