@@ -15,8 +15,8 @@ function list = createList(binary)
 	type1=mod((pt2d-1),4);
 	type2=floor((pt2d-1)/4);
 	if(~strcmp(mat,'steel/hdpe'))
-		mat1 = strcat('large ',mat);
-		mat2 = strcat('small ',mat);
+		mat1 = ['large ',mat];
+		mat2 = ['small ',mat];
 	else
 		mat1 = 'steel';
 		mat2 = 'hdpe';
