@@ -1,5 +1,5 @@
 function type = rgb_determine_marble(sensor)
-	[r, g, b]=readRGBColor(sensor);
+	[r, g, b]=readColorRGB(sensor);
 	
 	if(r>30&&r<60&&g>30&&g<30&&b>30&&b<60)
 		type = 'small red glass';
