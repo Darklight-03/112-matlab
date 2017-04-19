@@ -2,24 +2,16 @@ function numbers = read_Barcode(motor,sensor,speed,interval)
 	
 	readColor(sensor)
 	motor.Speed=speed;
-
-	while(~strcmp(readColor(sensor),'black'))
-		start(motor)
-	end
-	pause(.1);
-
-	while(strcmp(readColor(sensor),'black'))
-		start(motor)
-	end
-	pause(.1);
 	
-	while(~strcmp(readColor(sensor),'black'))
-		start(motor)
-	end
-	pause(.1);
-
-	while(strcmp(readColor(sensor),'black'))
-		start(motor)
+	wait=true;
+	start(motor)
+	while(wait==true)
+		if(strcmp(readColor(sensor),'black'))
+			pause(.1);
+			if(strcmp(readColor(sensor),'black'))
+				wait=false;
+			end
+		end
 	end
 
 	stop(motor,1);
@@ -31,8 +23,11 @@ function numbers = read_Barcode(motor,sensor,speed,interval)
 	points=[];
 	while(readRotation(motor)<interval*8)
 		if(strcmp(readColor(sensor),'black')&&b_read==false)
-			b_read=true;
-			points = [points readRotation(motor)];
+			pause(.1);
+			if(strcmp(readColor(sensor),'black')&&b_read==false)
+				b_read=true;
+				points = [points readRotation(motor)];
+			end
 		end
 		if(~strcmp(readColor(sensor),'black'))
 			b_read=false;
