@@ -1,7 +1,7 @@
 function b = rotateDist(motor,dist,speed,exact)
 	motor.Speed=speed;
 	resetRotation(motor);
-	while(abs(readRotation(motor)<dist))
+	while(abs(readRotation(motor))<dist)
 		start(motor);
 	end
 	stop(motor,1);
