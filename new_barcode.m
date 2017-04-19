@@ -32,17 +32,33 @@ start(cupSpinner);
 for i = 1:numBarcodes
 	binary = read_Barcode(barcodeMotor,barcodeSensor,barcodeSpeed,interval);
 	tmap = createList(binary);
-	map = [map ; tmap];
+	keys = tmap.keys;
+	values= tmap.values;
+	for n=1:length(keys)
+		if(isKey(map,keys(n)))
+			map(keys(n))=map(keys(n))+tmap(keys(n));
+		else
+			map(keys(n))=tmap(keys(n));
+		end
+	end
 end
-n = sum(values(map));
+total = sum(values(map));
 
 
-while(n>0)
+while(total>0)
 	marbletype = rgb_determine_marble(marbleSensor);
-	num = values(map,marbletype);
+	if(isKey(map,marbletype))
+		num=map(marbletype)
+	else
+		num = 0;
+	end
 	if(num>0)
 		dump(dumper,dumperSpeed,false);
-		n = n - 1;
+		total = total - 1;
+		map(marbletype)=map(marbletype)-1;
+		if(map(marbletype)<1)
+			remove(map,marbletype);
+		end
 	else
 		dump(dumper,dumperSpeed,true);
 	end

@@ -22,6 +22,13 @@ function list = createList(binary)
 		mat2 = 'hdpe';
 	end
 
-	map = containers.Map([mat1 mat2],[type1 type2]);
-	list = map;	
+	map = containers.Map({mat1 mat2},[type1 type2]);
+	K=map.keys;
+	V=map.values;
+	for i=1:length(K)
+		if(V(i)==0)
+			remove(map,K(i));
+		end
+	end
+	list=map;
 end
