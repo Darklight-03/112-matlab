@@ -1,9 +1,19 @@
 function type = rgb_determine_marble(sensor)
-	A=readColorRGB(sensor);
-	r=A(1);
-	g=A(2);
-	b=A(3);
+	Ar=[];
+	Ag=[];
+	Ab=[];
 
+	for i = 1:42
+		A=readColorRGB(sensor);
+		Ar(end+1)=A(1);
+		Ag(end+1)=A(2);
+		Ab(end+1)=A(3);
+	end
+	tot = [sum(Ar) sum(Ag) sum(Ab)];
+	avg = tot./length(tot);
+	r=avg(1);
+	b=avg(2);
+	g=avg(3);
 	bluesmall = [30 33 29 32 18 20];	
 	bluelarge = [28 30 28 31 20 22];
 	redsmall = [35 37 29 31 14 17];
