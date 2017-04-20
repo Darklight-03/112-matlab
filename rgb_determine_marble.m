@@ -14,7 +14,7 @@ function type = rgb_determine_marble(sensor)
 	r=avg(1);
 	g=avg(2);
 	b=avg(3);
-	fprintf('ravg = %.2f gavg = %.2f bavg = %.2f',r,g,b)
+	fprintf('ravg = %.2f gavg = %.2f bavg = %.2f\n',r,g,b);
 	bluesmall = [23 25 21 23 15 16];	
 	bluelarge = [21 22 20 21 15 17];
 	redsmall = [28 29 20 21 12 13];

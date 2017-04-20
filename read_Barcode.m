@@ -1,6 +1,6 @@
 function numbers = read_Barcode(motor,sensor,speed,interval)
 	
-	readColor(sensor)
+	readColor(sensor);
 	motor.Speed=speed;
 	
 	wait=true;
