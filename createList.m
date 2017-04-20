@@ -2,6 +2,8 @@ function list = createList(binary)
 	mat = 'null';
 	pt1=binary(2:4);
 	pt2=binary(5:9);
+	pt1=fliplr(pt1);
+	pt2=fliplr(pt2);
 	if(isequal(pt1,[0 0 1]))
 		mat = 'white glass';
 	elseif (isequal(pt1,[0 1 0]))
