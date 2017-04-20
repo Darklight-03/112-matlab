@@ -7,7 +7,7 @@ function numbers = read_Barcode(motor,sensor,speed,interval)
 	start(motor)
 	while(wait==true)
 		if(strcmp(readColor(sensor),'black'))
-			pause(.3);
+			pause(.25);
 			if(strcmp(readColor(sensor),'black'))
 				wait=false;
 			end
