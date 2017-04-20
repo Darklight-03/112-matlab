@@ -26,6 +26,7 @@ function list = createList(binary)
 	K=map.keys;
 	V=map.values;
 	for i=1:length(K)
+		fprintf('%s=%d',K(i),V(i));
 		if(cell2mat(V(i))==0)
 			remove(map,K(i));
 		end
