@@ -11,7 +11,7 @@ interval = 270;
 barcodeSpeed=20;
 numBarcodes=1;
 launchSpeed=40;
-cupSpeed=30;
+cupSpeed=0; %30
 
 brick = legoev3('usb');
 barcodeMotor = motor(brick, barcodeMotorPort);
