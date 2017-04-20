@@ -1,12 +1,13 @@
 function bool = dump(motor,speed,b)
+	dist = 90;
 	if(b==true)
-		rotateDist(motor,30,speed,false);
+		rotateDist(motor,dist,speed,false);
 		pause(.2);
-		rotateDist(motor,30,speed*-1,false);
+		rotateDist(motor,dist,speed*-1,false);
 	else
-		rotateDist(motor,30,speed*-1,false);
+		rotateDist(motor,dist,speed*-1,false);
 		pause(.2);
-		rotateDist(motor,30,speed,false);
+		rotateDist(motor,dist,speed,false);
 	end
 	bool=true;
 end

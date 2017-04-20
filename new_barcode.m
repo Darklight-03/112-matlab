@@ -20,7 +20,7 @@ marbleSensor = colorSensor(brick, marbleSensorPort);
 marbleLauncher = motor(brick,marbleLauncherPort);
 cupSpinner = motor(brick,cupSpinnerPort);
 dumper = motor(brick,dumperPort);
-dumperSpeed=25;
+dumperSpeed=30;
 map = containers.Map;
 
 
