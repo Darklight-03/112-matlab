@@ -43,7 +43,7 @@ for i = 1:numBarcodes
 	end
 end
 total = sum(cell2mat(map.values));
-
+fprintf('total=%d',total);
 
 while(total>0)
 	marbletype = rgb_determine_marble(marbleSensor);
@@ -53,7 +53,7 @@ while(total>0)
 		num = 0;
 	end
 	if(num>0)
-		rotateDist(marbleLauncher,355,launchSpeed*-1,true);
+		rotateDist(marbleLauncher,353,launchSpeed*-1,true);
 		pause(3);
 		dump(dumper,dumperSpeed,false);
 		total = total - 1;
@@ -62,7 +62,7 @@ while(total>0)
 			remove(map,marbletype);
 		end
 	else
-		rotateDist(marbleLauncher,355,launchSpeed*-1,true);
+		rotateDist(marbleLauncher,353,launchSpeed*-1,true);
 		pause(3);
 		dump(dumper,dumperSpeed,true);
 	end
