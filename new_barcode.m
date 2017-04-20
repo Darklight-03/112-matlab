@@ -43,7 +43,7 @@ for i = 1:numBarcodes
 	end
 end
 total = sum(cell2mat(map.values));
-fprintf('total=%d',total);
+fprintf('total=%d\n',total);
 
 while(total>0)
 	marbletype = rgb_determine_marble(marbleSensor);
