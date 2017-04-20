@@ -34,7 +34,6 @@ function numbers = read_Barcode(motor,sensor,speed,interval)
 		end
 	end
 	stop(motor,1);
-	disp(points);
 	points = round(points./interval)+1;
 	
 	points = [1 points];
