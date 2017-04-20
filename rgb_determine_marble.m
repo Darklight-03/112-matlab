@@ -56,7 +56,7 @@ function type = rgb_determine_marble(sensor)
 		type = 'hdpe';
 	end
 
-	fprintf('type=%s',type);
+	fprintf('type=%s\n',type);
 
 
 
