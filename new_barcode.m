@@ -7,7 +7,7 @@ cupSpinnerPort='C';
 dumperPort='D';
 rotationDistance = 360;
 rotationSpeed = -42;
-interval = 285;
+interval = 270;
 barcodeSpeed=20;
 numBarcodes=1;
 launchSpeed=40;
@@ -53,6 +53,8 @@ while(total>0)
 		num = 0;
 	end
 	if(num>0)
+		rotateDist(marbleLauncher,360,launchSpeed,false);
+		pause(3);
 		dump(dumper,dumperSpeed,false);
 		total = total - 1;
 		map(marbletype)=map(marbletype)-1;
@@ -60,6 +62,8 @@ while(total>0)
 			remove(map,marbletype);
 		end
 	else
+		rotateDist(marbleLauncher,360,launchSpeed,false);
+		pause(3);
 		dump(dumper,dumperSpeed,true);
 	end
 end
