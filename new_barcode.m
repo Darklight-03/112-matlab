@@ -53,7 +53,7 @@ while(total>0)
 		num = 0;
 	end
 	if(num>0)
-		rotateDist(marbleLauncher,360,launchSpeed*-1,true);
+		rotateDist(marbleLauncher,358,launchSpeed*-1,true);
 		pause(3);
 		dump(dumper,dumperSpeed,false);
 		total = total - 1;
@@ -62,7 +62,7 @@ while(total>0)
 			remove(map,marbletype);
 		end
 	else
-		rotateDist(marbleLauncher,360,launchSpeed*-1,true);
+		rotateDist(marbleLauncher,358,launchSpeed*-1,true);
 		pause(3);
 		dump(dumper,dumperSpeed,true);
 	end
