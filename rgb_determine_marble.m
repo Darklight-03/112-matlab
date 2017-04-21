@@ -15,14 +15,14 @@ function type = rgb_determine_marble(sensor)
 	g=avg(2);
 	b=avg(3);
 	fprintf('ravg = %.2f gavg = %.2f bavg = %.2f\n',r,g,b);
-	bluesmall = [27 32 20 26 15 20];	
-	bluelarge = [24 28 22 24 18 21];
-	redsmall = [32 38 19 22 11 14];
-	redlarge = [30 34 18 24 12 15];
-	whitesmall = [32 36 27 31 17 21];
-	whitelarge = [50 54 49 55 28 32];
-	hdpe = [36 43 31 39 16 24];
-	steel = [32 40 24 40 16 19];
+	bluesmall = [25    30    21    27    13    19];	
+	bluelarge = [23    27    20    24    14    18];
+	redsmall = [32   36   19    23    12    17];
+	redlarge = [32    34    16    18    10    12];
+	whitesmall = [41    43    43    44    20    21];
+	whitelarge = [50    57    57    65    21    25];
+	hdpe = [33    39    31    38    14    20];
+	steel = [29    34    26    32    14    16];
 	type='null';
 	if(r>=redsmall(1)&&r<=redsmall(2)&&g>=redsmall(3)&&g<=redsmall(4)&&b>=redsmall(5)&&b<=redsmall(6))
 		type = 'small red glass';

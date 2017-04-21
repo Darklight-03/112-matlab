@@ -1,5 +1,4 @@
 clear all;
-clearLCD;
 barcodeMotorPort = 'C';  %**ALL THE PORTS HAVE CHANGED; UPDATE THEM
 barcodeSensorPort = 1;
 marbleSensorPort = 2;
@@ -9,7 +8,7 @@ dumperPort='B';
 rotationDistance = 360;
 rotationSpeed = -42;
 interval = 250;
-barcodeSpeed=20*3;
+barcodeSpeed=20*4;
 numBarcodes=1;
 launchSpeed=40;
 cupSpeed=40; %**
@@ -17,6 +16,7 @@ cupSpeedInc=50;
 lcdLineDistance = 5;  %**
 
 brick = legoev3('usb');
+clearLCD(brick);
 barcodeMotor = motor(brick, barcodeMotorPort);
 barcodeSensor= colorSensor(brick, barcodeSensorPort);
 marbleSensor = colorSensor(brick, marbleSensorPort);
@@ -59,10 +59,13 @@ writeLCD(brick,printTotal,2+lcdLineDistance);   %**
 % end
 %   End of possible code
 
-start(cupSpinner);  %***
+
 prevMarbleType = '';
 numprev=0;
+
 while(total>0)
+    start(cupSpinner)   %***
+    pause(.5)      %*** 
     stop(cupSpinner)    %***
 	marbletype = rgb_determine_marble(marbleSensor);
 	if(strcmp(marbletype,prevMarbleType))
@@ -97,9 +100,7 @@ while(total>0)
 		rotateDist(marbleLauncher,351,launchSpeed*-1,true);
 		pause(3);
 		dump(dumper,dumperSpeed,true);
-    end
-    start(cupSpinner)   %***
-    pause(.5)      %*** 
+    	end 
 end
 
 
