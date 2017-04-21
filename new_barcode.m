@@ -1,4 +1,5 @@
 clear all;
+clearLCD;
 barcodeMotorPort = 'C';  %**ALL THE PORTS HAVE CHANGED; UPDATE THEM
 barcodeSensorPort = 1;
 marbleSensorPort = 2;
