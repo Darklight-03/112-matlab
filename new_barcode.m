@@ -13,6 +13,7 @@ barcodeSpeed=20*3;
 numBarcodes=1;
 launchSpeed=40;
 cupSpeed=40; %**
+cupSpeedInc=50;
 lcdLineDistance = 5;  %**
 
 brick = legoev3('usb');
@@ -59,10 +60,25 @@ writeLCD(brick,printTotal,2+lcdLineDistance);   %**
 %   End of possible code
 
 start(cupSpinner);  %***
-
+prevMarbleType = '';
+numprev=0;
 while(total>0)
     stop(cupSpinner)    %***
 	marbletype = rgb_determine_marble(marbleSensor);
+	if(strcmp(marbletype,prevMarbleType))
+		numprev=numprev+1;
+	else
+		numprev=0;
+		cupSpinner.Speed=cupSpeed;
+	end	
+	if(numprev==3)
+		cupSpinner.Speed=cupSpeedInc;
+	end
+	if(numprev==6)
+		playTone(brick,250,.3,50);
+	end
+	prevMarbleType=marbletype;
+
 	if(isKey(map,marbletype))
 		num=map(marbletype);
 	else
