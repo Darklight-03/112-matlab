@@ -77,7 +77,7 @@ while(total>0)
 	if(numprev==3)
 		cupSpinner.Speed=cupSpeedInc;
 	end
-	if(numprev==6)
+	if(numprev>=6)
 		playTone(brick,250,.3,50);
 	end
 	prevMarbleType=marbletype;

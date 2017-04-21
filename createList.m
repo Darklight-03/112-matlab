@@ -22,8 +22,8 @@ function list = createList(binary)
 	else
 		mat1 = 'steel';
 		mat2 = 'hdpe';
-	end
-
+    end
+    
 	map = containers.Map({mat1 mat2},[type1 type2]);
 	K=map.keys;
 	V=map.values;
